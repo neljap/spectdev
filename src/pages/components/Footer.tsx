@@ -39,6 +39,11 @@ const Footer = () => {
       id: 4,
       link: "/stock",
       text: "Stocks"
+    },
+    {
+      id: 5,
+      link: "/blockchain",
+      text: "Blockchain Technology"
     }
   ]
 
