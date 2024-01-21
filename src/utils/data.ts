@@ -202,12 +202,12 @@ export const PserveData = [
     {
         id: 2,
         text: "PRIVATE WEALTH MANAGEMENT",
-        img: splanthree
+        img: tradfour
     },
     {
         id: 3,
         text: "RETIREMENT PLANNING",
-        img: splanthree
+        img: tradone
     }
 
 ]
