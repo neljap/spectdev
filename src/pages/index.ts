@@ -1,0 +1,11 @@
+export {default as HomePg} from "./HomePg/HomePg";
+export {default as CartPg} from "./PlanServicePg/PlanServicePg";
+export {default as AboutPg} from "./AboutPg/AboutPg";
+export {default as LoginPg} from "./Auth/LoginPg";
+export {default as RegisterPg} from "./Auth/RegisterPg";
+export {default as FgtPwd} from "./Auth/FgtPwd";
+export {default as ContactPg} from "./ContactPg/ContactPg";
+export {default as PlanServicePg} from "./PlanServicePg/PlanServicePg";
+export {default as InvestmentstockPg} from "./Investmentstocks/Investmentstocks"; 
+export {default as InvestForexPg} from "./InvestForex/InvestForex";
+export {default as InvestBlockchain} from "./InvestBlockchain/InvestBlockchain";
