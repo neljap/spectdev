@@ -41,7 +41,7 @@ useEffect(() =>{
       delay: 100,
     });
   })
-  const WhatsLinkUs = "https://wa.link/hgu451";
+  const WhatsLinkUs = "https://wa.link/8129uc";
   return (
     
     <div>
@@ -54,6 +54,7 @@ useEffect(() =>{
       </Link>
       
     </div>
+    <div className="fixed top-1/3 w-32 h-20 bg-transparent z-50 right-20"></div>
       <Routes>
         <Route path="/" element={<HomePg />} />
         <Route path="/about" element={<AboutPg />} />

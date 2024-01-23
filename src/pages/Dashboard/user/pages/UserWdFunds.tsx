@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import axios from "axios";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 
 const UserWdFunds = () => {
   const [otp, setOtp] = useState(0);
@@ -84,7 +85,8 @@ const UserWdFunds = () => {
     {loadingWd ? (
       <SpinnerLoad /> 
     ): (
-    <div className="container">
+      <div>
+      <div className="container">
      <div className="flex justify-center items-center flex-col py-5">
       <h3>Complete withdrawal request</h3>
       <div className="border border-primary p-6 rounded-2xl bg-[#f1f1f1] dark:bg-[#1f2937]">
@@ -145,7 +147,10 @@ const UserWdFunds = () => {
         </form>
       </div>
     </div>   
-    </div>
+    </div>      
+    <FooterCR />
+      </div>
+
     )}
     </>
   );

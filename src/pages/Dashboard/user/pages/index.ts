@@ -10,3 +10,4 @@ export {default as UserPayDataInfo} from "./UserPayDataInfo";
 export {default as UserWithdraw} from "./UserWithdraw";
 export {default as UserWdFunds} from "./UserWdFunds";
 export {default as UserWdSuccess} from "./UserWdSuccess";
+export {default as UserPayProof} from "./UserPayProof";

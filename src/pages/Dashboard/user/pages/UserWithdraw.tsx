@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SpinnerLoad from '../../../components/SpinnerLoad'
+import FooterCR from './FooterCR'
 
 const UserWithdraw = () => {
   const [loading, setLoading] = useState(true)
@@ -19,7 +20,8 @@ const UserWithdraw = () => {
     {loading ? (
       <SpinnerLoad /> 
     ): (
-    <div className='container py-20'>
+      <div>
+   <div className='container py-20'>
         <h2 className='text-center pb-2 font-[600] text-xl'>Withdraw from your account</h2>
         <p className='text-center pb-2 font-[500] text-md'>Place a withdrawal request using any of the payment method below</p>
         <div className='flex justify-center items-center flex-col pt-4'>
@@ -37,7 +39,10 @@ const UserWithdraw = () => {
                 </Link>
             </div>
         </div>
-    </div>
+    </div>     
+    <FooterCR />
+      </div>
+    
     )}
     </>
   )

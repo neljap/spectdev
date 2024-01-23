@@ -11,6 +11,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import {IoMdCheckmarkCircleOutline} from "react-icons/io"
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 
 const UserHome = () => {
   const [loading, setLoading] = useState(true)
@@ -51,7 +52,8 @@ let dataverify = data?.verified
     {loading ? (
       <SpinnerLoad /> 
     ): (
-    <div className='py-6'>
+      <div>
+    <div className='pt-6'>
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 w-full justify-between align-middle">
         <div>
          <p className="text-start text-2xl">Welcome, {data?.fullname}</p>
@@ -143,7 +145,7 @@ let dataverify = data?.verified
       </div>
       <div>
         <h1 className="text-3xl">Personal Trading Chart</h1>
-        <div className="w-full my-5 bg-[#f1f1f1] dark:bg-[#1f2937]" style={{ height: "500px" }}>
+        <div className="w-full mt-5 bg-[#f1f1f1] dark:bg-[#1f2937] h-[600px]">
           <iframe
             src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cd3c4&symbol=BINANCE%3ABTCUSD&interval=1&hidesidetoolbar=0&symboledit=1&saveimage=1&studies=%5B%5D&theme=dark&style=9&timezone=Etc%2FUTC&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en&utm_source=www.account.deepmargins.com&utm_medium=widget&utm_campaign=chart&utm_term=BINANCE%3ABTCUSD#%7B%22page-uri%22%3A%22www.account.deepmargins.com%2Foverview%22%7D"
             // frameborder="0"
@@ -151,7 +153,10 @@ let dataverify = data?.verified
           ></iframe>
         </div>
       </div>
-    </div>
+    </div>    
+    <FooterCR />
+      </div>
+    
     )}
     </>
   )

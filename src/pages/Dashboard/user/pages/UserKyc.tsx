@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import KycAsset from "../../../../assets/kyc.jpg";
 import { useEffect, useState } from "react";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 
 const UserKyc = () => {
   const [loading, setLoading] = useState(true)
@@ -20,7 +21,8 @@ const UserKyc = () => {
     {loading ? (
       <SpinnerLoad /> 
     ): (
-    <div className="container py-8">
+      <div>
+     <div className="container pt-8 pb-16">
       <div className="flex justify-center items-center">
         <div className="flex flex-col justify-center items-center md:w-1/2 w-full gap-4 text-center bg-[#f1f1f1] dark:bg-[#1f2937] p-6 rounded-3xl">
           <img src={KycAsset} alt="" className="w-1/2 rounded-xl shadow" />
@@ -39,7 +41,10 @@ const UserKyc = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </div>   
+    <FooterCR />
+      </div>
+    
     )}
     </>
   );

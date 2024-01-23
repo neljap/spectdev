@@ -3,6 +3,9 @@ import { useNavigate, useParams } from "react-router-dom"
 import { addressData } from "../../../../utils/data"
 import { useEffect, useState } from "react"
 import SpinnerLoad from "../../../components/SpinnerLoad"
+import { FaClipboard } from "react-icons/fa"
+import FooterCR from "./FooterCR"
+
 // import {CopyToClipboard} from "react-copy-to-clipboard"
 // import { FaRegClipboard } from "react-icons/fa"
 
@@ -13,6 +16,12 @@ const UserPayDataInfo = () => {
 
   // const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(true)
+  // const [clipAddress, setClipAddress ] = useState<any>("")
+  const [isCopied, setIsCopied] = useState(false);
+
+  // console.log("from clipboard", clipAddress)
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,13 +33,40 @@ const UserPayDataInfo = () => {
     document.title = "Spectrum Capitals | Payment"
   }, [])
 
-  const selectedAddress = addressData.find((item : any) => item.name === wallet)
+  const selectedAddress:any = addressData.find((item : any) => item.name === wallet)
+
+  // This is the function we wrote earlier
+  async function copyTextToClipboard() {
+    if ('clipboard' in navigator) {
+      return await navigator.clipboard.writeText(selectedAddress?.address);
+    } else {
+      return document.execCommand('copy', true, selectedAddress?.address);
+    }
+  }
+
+  // onClick handler function for the copy button
+  const handleCopyClick = () => {
+    // Asynchronously call copyTextToClipboard
+    copyTextToClipboard()
+      .then(() => {
+        // If successful, update the isCopied state value
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
      <>
     {loading ? (
       <SpinnerLoad /> 
     ): (
-    <div className="container md:py-12 py-4">
+      <div>
+   <div className="container md:py-12 py-4">
         <div className="flex justify-center align-middle items-center">
             <div className="border border-primary rounded-xl">
                 <div className=" ">
@@ -55,8 +91,9 @@ const UserPayDataInfo = () => {
           <img src={selectedAddress?.image} className="w-full" alt="" />
         </div>
         <p>Send ${amount} to the address below</p>
-        <div className="">
-          <input type="text" name="" value={selectedAddress?.address} id="" className="w-100 rounded"/>
+        <div className="relative">
+          <input type="text" name="" value={selectedAddress?.address} id="" className="w-full rounded-xl border border-primary pe-16 ps-4 py-2"/>
+          <div className="absolute right-2 top-2 cursor-pointer flex flex-row justify-center items-center" onClick={handleCopyClick}><FaClipboard /> <p className="text-sm">{isCopied ? 'Copied': 'Copy'}</p></div>
           {/* <CopyToClipboard text={selectedAddress?.address} onCopy={() => setCopied(true)}>
             <FaRegClipboard size={30} cursor="pointer" />
           </CopyToClipboard> */}
@@ -74,7 +111,10 @@ const UserPayDataInfo = () => {
     </div>
             </div>
         </div>
-    </div>
+    </div>     
+    <FooterCR />
+      </div>
+    
     )}
     </>
   )

@@ -8,6 +8,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 // import { BsCloudUpload } from "react-icons/bs";
 
 const UserSettings = () => {
@@ -64,6 +65,7 @@ const UserSettings = () => {
      {loadingSet ? (
       <SpinnerLoad /> 
     ): (
+      <div>
       <div className="h-fit w-[75%] mx-auto p-3 rounded-2xl my-1 bg-primary mt-8">
         <div className="flex justify-between items-center py-2 flex-wrap">
           <div className="flex">
@@ -222,6 +224,9 @@ const UserSettings = () => {
           </div>
         </form>
       </div>
+      <FooterCR />
+        </div>
+      
     )}
     </>
   );

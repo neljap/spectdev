@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../context/AuthContext";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 
 const UserSupport = () => {
     const [subject, setSubject] = useState("");
@@ -68,6 +69,7 @@ const handleSubmit = async (e: any) => {
     {loadingSup ? (
       <SpinnerLoad /> 
     ): (
+      <div>
     <div className='container py-6'>
         <p className='text-center text-3xl pb-4'>Support</p>
         <div className="w-full">
@@ -90,7 +92,10 @@ const handleSubmit = async (e: any) => {
                 <button className="py-4 px-8 rounded-2xl bg-primary">{loading ? "Submitting..." : "Submit"}</button>
             </form>
         </div>
-        </div>
+        </div>    
+        <FooterCR />
+      </div>
+    
     )}
     </>
   )

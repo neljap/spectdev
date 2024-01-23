@@ -1,7 +1,7 @@
 import { AssemgeCard, Button} from "../../ui";
 import {  stockData } from "../../../utils/data";
 import IRAsset from "../../../assets/investrealte.jpg"
-import Fplanassest from "../../../assets/fplanassest.jpg";
+import { metesto } from "../../../assets";
 
 const AsMangeSection = () => {
   return (
@@ -72,7 +72,7 @@ const AsMangeSection = () => {
       <hr />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10 justify-center items-center">
         <div>
-          <img src={Fplanassest} alt="" className="w-full rounded-lg" />
+          <img src={metesto} alt="" className="w-full rounded-lg" />
         </div>
         <div>
           <div>

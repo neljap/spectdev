@@ -1,11 +1,11 @@
-import { btcpng, clstock, corabt, dedabt, dlrpng, egabt, ethpng, flstock, forabt, gpstock, indabt, institutemanage, instock, ltcpng,  splanthree,  steabt, tradfour, tradone, tradthree, tradtwo, wealthmanage } from "../assets"
+import { btcpng, clstock, corabt, dedabt, egabt, ethpng, flstock, forabt, gpstock, indabt, institutemanage, instock, ltcpng,  metest,  metesta,  metesti,  splanthree,  steabt, tradfour, tradone, tradthree, tradtwo } from "../assets"
 import afthero from "../assets/about-hero.jpg"
 export const stockData = [
     {
         id: 1,
         title: "ASSET MANAGEMENT",
         text: "We create customized, integrated investment solutions to meet the unique needs of insurers and pension plans.",
-        img: wealthmanage
+        img: metest
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const stockData = [
         id: 3,
         title: "WEALTH MANAGEMENT",
         text: "Your financial goals are uniquely your own, so will design a wealth management strategy that’s just for you.",
-        img: wealthmanage
+        img: metesta
     }
 
 ]
@@ -207,7 +207,7 @@ export const PserveData = [
     {
         id: 3,
         text: "RETIREMENT PLANNING",
-        img: tradone
+        img: metesti
     }
 
 ]
@@ -240,6 +240,6 @@ export const addressData = [
         name: 'USDT',
         address: 'TAWCzZ2aGT0]oj6QWr1vXnnUV9wxQHLQK5qn',
         unit: 'USDT (TRC20)',
-        image: dlrpng
+        image: "https://cryptologos.cc/logos/tether-usdt-logo.svg?v=029"
     }
 ]

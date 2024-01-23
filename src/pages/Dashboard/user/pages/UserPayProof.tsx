@@ -1,14 +1,16 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
 import { BsCloudUpload } from "react-icons/bs";
-import axios from "axios";
-import {ThreeDots} from "react-loader-spinner";
-import { hosturl } from "../../../../utils/ApiFeatures";
-import { AuthContext } from "../../../context/AuthContext";
+import { ThreeDots } from "react-loader-spinner";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { hosturl } from "../../../../utils/ApiFeatures";
 import FooterCR from "./FooterCR";
-const UserKycVData = () => {
-  const [kycFile, setKycFile] = useState("");
+
+
+const UserPayProof = () => {
+    const [kycFile, setKycFile] = useState("");
   // const [percent, setPercent] = useState(0);
   const [loading, setLoading] = useState(false)
 
@@ -50,7 +52,7 @@ const UserKycVData = () => {
   const uploadFile = async(e : any) => {
     e.preventDefault();
     if (!kycFile) {
-      toast.error("Please Upload a file", {
+      toast.info("Kindly Upload your Payment Receipt", {
         position: "bottom-left",
       });
       return;
@@ -59,9 +61,20 @@ const UserKycVData = () => {
     try {
       setLoading(true)
       const kycinfo = await preFile('image');
-      await axios.patch(`${hosturl}/api/user/update/${data?._id}`, {
-        kycinfo,
+
+      if(!kycinfo || !data?._id){
+        toast.info("Payment Receipt not uploaded, Kindly Upload", {position: "bottom-left"})
+        return
+      }else{
+        await axios.post(`${hosturl}/api/user/deposit-receipt`, {
+        userid: data?._id,
+        receipt: kycinfo,
       });
+
+      toast.success("Receipt Uploaded Successfully", {position: "bottom-left"})
+      }
+
+      
     } catch (error : any) {
       toast.error(error.code, { position: "bottom-left" });
     } finally{
@@ -78,20 +91,14 @@ const UserKycVData = () => {
     {loadingKyc ? (
       <SpinnerLoad /> 
     ): (
-      <div>
+        <div>
      <div className="container py-6">
       <div>
-        <h2 className="text-center py-4 text-3xl">TIER TWO VERIFICATION</h2>
+        <h2 className="text-center py-4 text-3xl">PROOF OF PAYMENT</h2>
         <div className="flex flex-col gap-6">
           <div style={{ maxWidth: "500px", margin: "0px auto" }} >
-            <h3 className="text-center">Tier two Verification (KYC)</h3>
             <p className="text-center">
-              Please kindly upload a government approved identification
-              document. (ID Card, Driver licenses and any other document.)
-            </p>
-            <p className="text-center">
-              Note: This can be rejected upon submission due to unclear format
-              or wrong input
+                Please, Kindly Upload Proof of Payment, Such as Receipt, Screenshot or Snapshot of Payment
             </p>
           </div>
             <div className="flex flex-col gap-8 justify-center items-center">
@@ -108,7 +115,7 @@ const UserKycVData = () => {
                 {/* <p>{percent} % done</p> */}
                 <BsCloudUpload size={100} color="black" />
                 <p className="text-center text-black">
-                  Upload Your Document here
+                  Upload Your Receipt here
                 </p>
               </div>
               <button
@@ -121,13 +128,16 @@ const UserKycVData = () => {
             </div>
         </div>
       </div>
-    </div>   
+    </div>     
+    <div className="mt-20">
     <FooterCR />
-      </div>
+    </div>  
+    
+        </div>
     
     )}
     </>
   );
-};
+}
 
-export default UserKycVData;
+export default UserPayProof

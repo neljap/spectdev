@@ -12,7 +12,8 @@ import {
   UserPayDataInfo,
   UserWithdraw,
   UserWdFunds,
-  UserWdSuccess
+  UserWdSuccess,
+  UserPayProof
 } from "./pages";
 
 const UserMain = () => {
@@ -27,6 +28,7 @@ const UserMain = () => {
         <Route path="withdraw-success" element={<UserWdSuccess />} />
         <Route path="deposit" element={<UserDeposit />} />
         <Route path="payment/:wallet/:amount" element={<UserPayDataInfo />} />
+        <Route path="/payment/proof" element={<UserPayProof />} />
         <Route path="kyc-data" element={<UserKycVerify />} />
         <Route path="support" element={<UserSupport />} />
         <Route path="settings" element={<UserSettings />} />

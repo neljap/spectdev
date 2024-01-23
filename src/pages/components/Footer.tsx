@@ -4,6 +4,7 @@ import { MainLogo } from "."
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { toast } from "react-toastify"
+import { hosturl } from "../../utils/ApiFeatures"
 import axios from "axios"
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
 
   const handleEmailSub = async() => {
     try{
-      await axios.post("http://localhost:3030/api/user/email-subscribe", {email});
+      await axios.post(`${hosturl}/api/user/email-subscribe`, {email});
       setEmail('');
       toast.success("Email Address Received", {position: "bottom-left"})
     }catch(err: any){

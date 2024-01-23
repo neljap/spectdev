@@ -3,6 +3,7 @@ import {toast} from "react-toastify"
 import { useNavigate } from "react-router-dom";
 import { addressData } from "../../../../utils/data";
 import SpinnerLoad from "../../../components/SpinnerLoad";
+import FooterCR from "./FooterCR";
 
 const UserDeposit = () => {
     const navigate = useNavigate();
@@ -73,7 +74,8 @@ const UserDeposit = () => {
     {loading ? (
       <SpinnerLoad /> 
     ): (
-    <div className="container py-12">
+      <div>
+      <div className="container py-12">
         <div>
           <h2 className="text-center text-3xl font-[600] p-6">Deposit</h2>
             <form
@@ -107,7 +109,13 @@ const UserDeposit = () => {
           </button>
         </form>
         </div>
+    </div>  
+    <div className="m-50">
+      <FooterCR />
     </div>
+    
+      </div>
+    
     )}
     </>
   )
