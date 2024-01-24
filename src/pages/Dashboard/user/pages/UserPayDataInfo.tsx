@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import SpinnerLoad from "../../../components/SpinnerLoad"
 import { FaClipboard } from "react-icons/fa"
 import FooterCR from "./FooterCR"
+import { toast } from "react-toastify"
 
 // import {CopyToClipboard} from "react-copy-to-clipboard"
 // import { FaRegClipboard } from "react-icons/fa"
@@ -19,7 +20,6 @@ const UserPayDataInfo = () => {
   // const [clipAddress, setClipAddress ] = useState<any>("")
   const [isCopied, setIsCopied] = useState(false);
 
-  // console.log("from clipboard", clipAddress)
 
 
 
@@ -56,7 +56,7 @@ const UserPayDataInfo = () => {
         }, 1500);
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err, {position: "bottom-left"})
       });
   }
 

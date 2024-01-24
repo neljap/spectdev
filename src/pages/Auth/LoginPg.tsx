@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import Asimg from "../../assets/Sign in-bro.svg";
 import SpinnerLoad from "../components/SpinnerLoad";
+import { hosturl } from "../../utils/ApiFeatures";
 // import {ThreeDots} from "react-loader-spinner"
 
 const LoginPg = () => {
@@ -46,7 +47,7 @@ const LoginPg = () => {
     const formData = { email, password };
 
     await axios
-      .post("https://specserver.vercel.app/api/user/login", formData)
+      .post(`${hosturl}/api/user/login`, formData)
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/home");
@@ -54,7 +55,6 @@ const LoginPg = () => {
         toast.success("Login Successfully", { position: "bottom-left" });
       })
       .catch((err) => {
-        console.log(err);
         toast.error(err.message, { position: "bottom-left" });
         setLoading(false);
       })

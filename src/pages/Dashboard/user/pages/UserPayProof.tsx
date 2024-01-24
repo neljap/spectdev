@@ -42,7 +42,6 @@ const UserPayProof = () => {
 
       const res = await axios.post(api, data);
       const { secure_url } = res.data;
-      console.log(secure_url);
       return secure_url;
     } catch (error :any) {
       toast.error(error.code, { position: "bottom-left" });
@@ -66,11 +65,10 @@ const UserPayProof = () => {
         toast.info("Payment Receipt not uploaded, Kindly Upload", {position: "bottom-left"})
         return
       }else{
-        await axios.post(`${hosturl}/api/user/deposit-receipt`, {
+     await axios.post(`${hosturl}/api/user/receipts`, {
         userid: data?._id,
         receipt: kycinfo,
       });
-
       toast.success("Receipt Uploaded Successfully", {position: "bottom-left"})
       }
 

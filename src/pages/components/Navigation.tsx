@@ -14,7 +14,6 @@ const Navigation = () => {
   const {data} = useContext(AuthContext);
 
   const changeBackground = () => {
-    // console.log(window.scrollY)
     if (window.scrollY >= 80) {
       setChangebg(true);
     } else {

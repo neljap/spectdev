@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { hosturl } from "../../utils/ApiFeatures";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext<any>(null);
 
@@ -21,12 +22,10 @@ export const AuthProvider = ({ children }: any) => {
         .then((res) => {
           setData(res?.data);
         })
-        .catch((err) =>  console.log(err.response.data));
+        .catch((err) => toast.error(err, {position: "bottom-left"}));
     };
     getUserDetails();
   }, []);
-
-  console.log("data from context", data);
 
   return (
     <AuthContext.Provider value={{ data, setData }}>
