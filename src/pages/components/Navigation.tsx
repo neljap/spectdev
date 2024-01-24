@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
 import { MainLogo } from ".";
+import { useContext } from "react";
+import Cookies from 'js-cookie';
+import { AuthContext } from "../context/AuthContext";
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [changebg, setChangebg] = useState(false);
+
+  const {data} = useContext(AuthContext);
 
   const changeBackground = () => {
     // console.log(window.scrollY)
@@ -18,6 +23,27 @@ const Navigation = () => {
   };
   window.addEventListener("scroll", changeBackground);
 
+  const checkNav = () => {
+    return(
+      <div>
+        {data ? (
+            <Link to="/user/home">
+              <Button btntext={data?.fullname} />
+            </Link>
+          ): (
+            <Link to="/login">
+             <Button btntext="login" />   
+            </Link>
+          )}
+      </div>
+    )
+  }
+
+  let cookietoken = Cookies.get("token");
+
+  useEffect(() => {
+    checkNav()
+  }, [data, cookietoken])
 
   return (
     <nav className={`${changebg ? "bg-[#f1f1f1] dark:bg-[#1f2937] fixed w-full z-50": "bg-transparent"}`}>
@@ -86,10 +112,7 @@ const Navigation = () => {
           </li>
         </ul>
         <div className="md:block hidden">
-            <Link to="/login">
-             <Button btntext="login" />   
-            </Link>
-          
+          {checkNav()}
         </div>
         {/* Mobile nav */}
         <ul
@@ -165,10 +188,7 @@ const Navigation = () => {
             </div>
           </div>
           <div className="py-5">
-            <Link to="/login">
-             <Button btntext="Login"/>   
-            </Link>
-            
+            {checkNav()}
           </div>
         </ul>
       </div>

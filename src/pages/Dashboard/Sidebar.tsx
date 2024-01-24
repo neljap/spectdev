@@ -16,8 +16,6 @@ import { toast } from 'react-toastify';
 import { MainLogo } from '../components';
 
 const Sidebar = ({children}: any) => {
-    // const[isOpen ,setIsOpen] = useState(false);
-    // const toggle = () => setIsOpen (!isOpen);
 
     const [logoutModal, setLogoutModal] = useState(false);
     const [open, setOpen] = useState(false);
