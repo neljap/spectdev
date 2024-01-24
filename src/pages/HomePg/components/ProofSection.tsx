@@ -7,7 +7,7 @@ const ProofSection = () => {
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
         <div className='flex flex-col gap-4'>
-          <h6 className="text-primary font-[700] font-[Jost] md:text-4xl">
+          <h6 className="text-primary font-[700] font-[Jost] md:text-4xl text-xl">
           Licensed and Certified Trading Platform
             
           </h6>

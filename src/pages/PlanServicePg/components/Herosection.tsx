@@ -41,7 +41,7 @@ const Herosection = () => {
             ))}    
         </div> */}
         <div className='flex justify-center items-center py-6 md:py-12'>
-          <div className='flex flex-col justify-center items-center w-1/2 gap-6'>
+          <div className='flex flex-col justify-center items-center md:w-1/2 w-full gap-6'>
                 <p className='text-lg md:text-3xl font-[Jost] pb-2' data-aos="zoom-in">OUR VERSION OF FINANCIAL PLANNING</p>
                 <p className='text-center' data-aos="zoom-in">Some companies only focus on insurance, Others on investments. Our advisors look at your financial big picture and recommend the right insurance and investment strategies in one integrated financial plan, designed to help you live the life you've always wanted.</p>
         </div>  

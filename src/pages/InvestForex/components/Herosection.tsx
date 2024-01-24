@@ -61,12 +61,12 @@ const Herosection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             
             <div data-aos="fade-up-right">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Foreign Exchange</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Foreign Exchange</h3>
               <p className="text-md">
                 Spectrum Capitals finance offers a broad array of professional services and access to the global foreign exchange markets for commercial and institutional clients. execution and clearing services in virtually all tradable currency pairs and derivative instruments.
               </p>
-              <div>
-                <h4>What is foreign exchange?</h4>
+              <div className="pt-4">
+                <h4 className="md:text-2xl text-lg font-[500] pb-1">What is foreign exchange?</h4>
                 <p className="text-md">Forex, or foreign exchange, can be explained as a network of buyers and sellers, who transfer currency between each other at an agreed price. It is the means by which individuals, companies and central banks convert one currency into another - if you have ever travelled abroad, then it is likely you have made a forex transaction.</p>
                 </div>
             </div>
@@ -80,7 +80,7 @@ const Herosection = () => {
               <img src={cryassetsfx} alt="" className="w-full rounded-xl" />
             </div>
             <div data-aos="fade-up-left">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Crypto asset</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Crypto asset</h3>
               <p className="text-md">
                 Spectrum Capitals offers a variety of cryptocurrencies that can be traded in relation to many different currencies. We offer pairings with the following cryptocurrencies: Bitcoin, Litecoin, Ripple, TRON, Ethereum and many others. Study cryptocurrency price charts with Spectrum Capitals
               </p>
@@ -91,7 +91,7 @@ const Herosection = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             <div data-aos="fade-up-left">
-              <h3 className="text-3xl font-[Jost] pb-2">Real Assets</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Real Assets</h3>
               <p className="text-md">
                 These funds typically invest in tangible assets that derive
                 their value from their substance and physical properties. Real
@@ -117,7 +117,7 @@ const Herosection = () => {
               <img src={instragety} alt="" className="w-full rounded-xl" />
             </div>
             <div data-aos="fade-up-right">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Infrastructure</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Infrastructure</h3>
               <p className="text-md">
                 We are one of the world's largest infrastructure investors, owning and operating assets across the utilities, transport, energy and data infrastructure sectors. Our portfolio, grounded in 7 years of investment experience, provides diversified exposure to scarce, high-quality businesses with significant barriers to entry. We invest in infrastructure assets that deliver essential goods and services - from the movement of passengers and freight over toll roads and rail networks to the distribution of energy and other products through ports and pipelines, and much more.
               </p>
@@ -125,13 +125,13 @@ const Herosection = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             <div data-aos="fade-up-left">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Commodities</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Commodities</h3>
               <div>
-                <h4>Who we are</h4>
+                <h4 className="md:text-2xl text-lg font-[500] pb-1">Who we are</h4>
                 <p className="text-md">Spectrum Capitals commodities team seeks to generate alpha through directional and relative value strategies across both physical and financial commodities markets. We evaluate opportunities in natural gas, power, crude, and refined products, and agriculture, primarily in North America and Europe.</p>
               </div>
               <div>
-                <h4>How we do it</h4>
+                <h4 className="md:text-2xl text-lg font-[500] pb-1">How we do it</h4>
                 <p className="text-md">Spectrum Capitals uses fundamental research, proprietary analytical methodologies, and quantitative analysis to drive our views. We join these techniques with an intense focus on understanding each market we trade, reflected in our ability to generate supply and demand balances for each commodity or product. A key part of this process is our advanced technology platform that allows us to quickly and deeply understand patterns within a market or product, conduct scenario analysis and improve the overall accuracy of our views.</p>
               </div>
             </div>
@@ -144,20 +144,20 @@ const Herosection = () => {
               <img src={credassetsfx} alt="" className="w-full rounded-xl" />
             </div>
             <div data-aos="fade-up-right">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Credit</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Credit</h3>
               <div>
-                <h4>Who we are</h4>
+                <h4 className="md:text-2xl text-lg font-[500] pb-1">Who we are</h4>
                 <p className="text-md">Spectrum Capitals's credit team seeks to generate alpha by focusing on the relationships that connect corporate bonds, convertible bonds, bank debt, credit derivatives, credit indices, and equities.</p>
               </div>
               <div>
-                <h4>How we do it</h4>
+                <h4 className="md:text-2xl text-lg font-[500] pb-1">How we do it</h4>
                 <p className="text-md">Operating primarily across the U.S. and European corporate universe, the group's core strategies integrate structural, statistical, and fundamental approaches to investing across the corporate capital structure.</p>
               </div>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             <div data-aos="fade-up-left">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Hedge Strategies</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Hedge Strategies</h3>
               <p className="text-md">
                 Also referred to as alternative strategies, these investment strategies use both long and short positions in markets and securities as well as derivatives in an attempt to minimize market beta returns while seeking alpha and risk-adjusted returns. Some of the most common strategies are long and short equity, global macro, relative value, and credit.
               </p>
@@ -172,7 +172,7 @@ const Herosection = () => {
             </div>
             <div data-aos="fade-up-right">
               <div>
-                <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">INVESTED IN SUSTAINABLE GROWTH</h3>
+                <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">INVESTED IN SUSTAINABLE GROWTH</h3>
               <p className="text-md">
                 Sustainability and Energy Transition are areas of intense focus for the investment community, impacting virtually every sector. At Spectrum Capitals, we draw from our in-depth research and thought leadership across the firm as we explore Sustainability and its impact on the business and social landscape. We bring particular expertise in alternative energy, mobility technology, biotechnology, synthetic biology, Internet of Things, edge computing and 5G, and robotics and automation.
               </p>
@@ -182,7 +182,7 @@ const Herosection = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             <div data-aos="fade-up-left">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">INSTITUTIONAL MANAGEMENT</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">INSTITUTIONAL MANAGEMENT</h3>
               <p>
                When you select Spectrum Capitals to manage institutional assets, you will discover why we've earned the reputation for solid performance and equally solid relationships. Our stable ownership and strong balance sheet allow us to think long-term, while our dynamic culture inspires long tenures and deep institutional knowledge. And, above all, our high rate of client retention demonstrates that we not only say what we do, we do what we say.
 
@@ -197,7 +197,7 @@ const Herosection = () => {
               <img src={privassets} alt="" className="w-full rounded-xl" />
             </div>
             <div data-aos="fade-up-right">
-              <h3 className="text-lg md:text-3xl font-[Jost] pb-2'">Private Equity</h3>
+              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Private Equity</h3>
               <p className="text-md">
                 Private equity funds typically invest in equity capital that is not quoted on a public exchange. Instead, the funds take direct ownership positions in private companies, which potentially may provide above-market returns and control of the investment, at the risk of reduced liquidity and diversification.
               </p>

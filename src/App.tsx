@@ -48,6 +48,7 @@ useEffect(() =>{
     <div onClick={() => setTheme(theme === "light" ? "dark" : "light")} className="fixed top-1/2 md:right-20 right-10 cursor-pointer border border-primary rounded-full p-2 z-50 dark:bg-[#f1f1f1] bg-[#1f2937] shadow-2xl">
       {themeBox()}
     </div>
+    {/* <div className="fixed bottom-2/3 md:left-10 left-5 bg-primary w-12 h-12 rounded-full flex justify-center items-center cursor-pointer z-50"><Translator /></div> */}
     <div className="fixed bottom-1/3 md:left-10 left-5 bg-primary w-12 h-12 rounded-full flex justify-center items-center cursor-pointer z-50">
       <Link to={WhatsLinkUs} target="_blank">
         <FaWhatsapp size={32}/>

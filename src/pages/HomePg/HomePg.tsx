@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../components";
-import {AsMangeSection, InvestSection, ProofSection, SectorHmSection} from "./components";
+import {AsMangeSection, InvestSection, ProofSection} from "./components";
 import TestHero from "./components/TestHero";
 import SpinnerLoad from "../components/SpinnerLoad";
 
@@ -27,7 +27,7 @@ const HomePg = () => {
       <AsMangeSection />
       <ProofSection />
       <InvestSection />
-      <SectorHmSection />
+      {/* <SectorHmSection /> */}
       {/* <BlogSection /> */}
       <Footer />
     </div>
