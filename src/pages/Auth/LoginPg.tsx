@@ -8,6 +8,7 @@ import axios from "axios";
 import Asimg from "../../assets/Sign in-bro.svg";
 import SpinnerLoad from "../components/SpinnerLoad";
 import { hosturl } from "../../utils/ApiFeatures";
+import ReCAPTCHA from "react-google-recaptcha";
 // import {ThreeDots} from "react-loader-spinner"
 
 const LoginPg = () => {
@@ -20,7 +21,11 @@ const LoginPg = () => {
   // const handleRecapChange = (value) => {
   //   setIsRecapVerify(true)
   // }
-  const [loadingSpin, setLoadingSpin] = useState(true)
+  const [loadingSpin, setLoadingSpin] = useState(true);
+  const [recapState, setRecapState] = useState(null);
+
+  // 6LdND14pAAAAALsYMjhH7xcwm-xPrCw5RVpTDnKs
+  // 6LdND14pAAAAAOWtgD_45LoccEfDyciUbdd0xtPB
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,6 +47,10 @@ const LoginPg = () => {
     //     })
     //     return;
     // }
+    if(recapState == null){
+      toast.info("Confirm that you're not a robot", {position: "bottom-left"})
+      return;
+    }
     setLoading(true);
 
     const formData = { email, password };
@@ -127,6 +136,9 @@ const LoginPg = () => {
                   />
                 )}
               </div>
+            </div>
+            <div>
+              <ReCAPTCHA sitekey="6LdND14pAAAAALsYMjhH7xcwm-xPrCw5RVpTDnKs" onChange={(val : any) => setRecapState(val)} />
             </div>
             <div className="flex flex-row gap-2 justify-between align-middle items-center py-2 ">
              <button
