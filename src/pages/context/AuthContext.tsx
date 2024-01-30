@@ -27,6 +27,8 @@ export const AuthProvider = ({ children }: any) => {
     getUserDetails();
   }, []);
 
+  console.log("from context", data)
+
   return (
     <AuthContext.Provider value={{ data, setData }}>
       {children}

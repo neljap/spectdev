@@ -4,7 +4,6 @@ import {
   UserHome,
   UserKyc,
   UserRefferals,
-  UserSettings,
   UserSupport,
   UserWallet,
   UserKycVerify,
@@ -15,6 +14,8 @@ import {
   UserWdSuccess,
   UserPayProof
 } from "./pages";
+import SettingProfile from "./pages/settings/components/SettingProfile";
+import { SettingKyc, SettingsPpics, SettingsPwd } from "./pages/settings/components";
 
 const UserMain = () => {
   return (
@@ -31,7 +32,10 @@ const UserMain = () => {
         <Route path="/payment/proof" element={<UserPayProof />} />
         <Route path="kyc-data" element={<UserKycVerify />} />
         <Route path="support" element={<UserSupport />} />
-        <Route path="settings" element={<UserSettings />} />
+        <Route path="settings/main" element={<SettingProfile />} />
+        <Route path="settings/picture" element={<SettingsPpics/>} />
+        <Route path="settings/password" element={<SettingsPwd />} />
+        <Route path="settings/kyc" element={<SettingKyc/>} />
         <Route path="refferals" element={<UserRefferals />} />
       </Routes>
     </Sidebar>

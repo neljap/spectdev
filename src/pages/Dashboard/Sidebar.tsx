@@ -70,11 +70,15 @@ const Sidebar = ({children}: any) => {
             icon:<FaThList/>
         },
         {
-            path:"/user/settings",
+            path:"/user/settings/main",
             name:"Settings",
             icon:<FaCommentAlt/>
         }
     ]
+
+    const activeLink = "flex flex-row gap-5 px-6 py-2 justify-start items-center bg-white text-primary"
+
+    const normalLink = "flex flex-row gap-5 px-6 py-2 justify-start items-center"
 
     return (
         <>
@@ -83,7 +87,7 @@ const Sidebar = ({children}: any) => {
             <h1>Logo</h1>
             <div onClick={() => setShowMenu(true)} className='cursor-pointer'>bars</div>
         </div> */}
-        <div className="flex block md:hidden items-center font-medium justify-around">
+        <div className="flex  md:hidden items-center font-medium justify-around">
         <div className="z-50 p-5 md:w-auto w-full flex justify-between">
           <img src={Logo} alt="logo" className="md:cursor-pointer h-9" />
           <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
@@ -115,7 +119,8 @@ const Sidebar = ({children}: any) => {
                </div>
                {
                    menuItem.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className="flex flex-row gap-5 px-6 py-2 justify-start items-center">
+                      //  <NavLink to={item.path} key={index} className="flex flex-row gap-5 px-6 py-2 justify-start items-center">
+                       <NavLink to={item.path} key={index} className={({isActive}) => (isActive ? activeLink : normalLink)}>
                            <div className="icon">{item.icon}</div>
                            <div className="link_text">{item.name}</div>
                        </NavLink>
