@@ -21,7 +21,7 @@ const ResetPwd = () => {
   // const handleRecapChange = (value) => {
   //   setIsRecapVerify(true)
   // }
-  const {token} = useParams()
+  const {token, id} = useParams()
   const [loadingSpin, setLoadingSpin] = useState(true);
 
 
@@ -49,7 +49,7 @@ const ResetPwd = () => {
     setLoading(true);
 
     await axios
-      .post(`${hosturl}/api/user/reset-password/${token}`, {password})
+      .post(`${hosturl}/api/user/reset-password/${id}/${token}`, {password})
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/home");

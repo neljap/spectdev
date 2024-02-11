@@ -68,7 +68,7 @@ useEffect(() =>{
         <Route path="/contact" element={<ContactPg />} />
         <Route path="/register" element={<RegisterPg />} />
         <Route path="/forgot-password" element={<FgtPwd />} />
-        <Route path="/reset-password/:token" element={<ResetPwd />} />
+        <Route path="/reset-password/:id/:token" element={<ResetPwd />} />
       </Routes>
       <ToastContainer />
     </div>

@@ -8,7 +8,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import SpinnerLoad from "../../../components/SpinnerLoad";
 import FooterCR from "./FooterCR";
 const UserKycVData = () => {
-  const [kycFile, setKycFile] = useState("");
+  const [kycFile, setKycFile] = useState <any>("");
   // const [percent, setPercent] = useState(0);
   const [loading, setLoading] = useState(false)
 
@@ -21,7 +21,7 @@ const UserKycVData = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoadingKyc(false)
-    }, 2000)
+    }, 500)
   }, [])
 
   useEffect(() => {
@@ -61,6 +61,10 @@ const UserKycVData = () => {
       await axios.patch(`${hosturl}/api/user/update/${data?._id}`, {
         kycinfo,
       });
+
+      toast.success("Kyc Data Uploaded Successfully", {position: "bottom-left"})
+      window.location.reload()
+
     } catch (error : any) {
       toast.error(error.code, { position: "bottom-left" });
     } finally{
@@ -94,27 +98,29 @@ const UserKycVData = () => {
             </p>
           </div>
             <div className="flex flex-col gap-8 justify-center items-center">
-              <div className="border border-primary p-8 rounded-2xl bg-[#f1f1f1] dark:bg-[#1f2937]" onClick={uploadRef}>
+              <div className="border border-primary p-8 rounded-2xl bg-[#f1f1f1] dark:bg-[#1f2937] flex flex-col justify-center items-center cursor-pointer h-56 md:w-[400px] w-[300px] " onClick={uploadRef} style={{backgroundImage: kycFile ? `url(${URL.createObjectURL(kycFile)})` : "", backgroundSize: "cover",  backgroundPosition: "center"}}>
                 <input
                   type="file"
-                  name=""
                   style={{ display: "none" }}
                   accept="/image/*"
-                  id=""
                   onChange={(e: any) => setKycFile(e.target.files[0])}
                   ref={inputRef}
                 />
                 {/* <p>{percent} % done</p> */}
+                {!kycFile && <>
                 <BsCloudUpload size={100} color="black" />
                 <p className="text-center text-black">
                   Upload Your Document here
                 </p>
+                </>}
+
+                
               </div>
               <button
                 className="bg-primary px-4 py-2 rounded-xl"
                 onClick={uploadFile}
               >
-                Upload
+                {loading ? "Uploading..." : "Upload"}
               </button>
               {loading && <ThreeDots /> }
             </div>
