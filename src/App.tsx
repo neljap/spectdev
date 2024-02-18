@@ -41,7 +41,7 @@ useEffect(() =>{
       delay: 100,
     });
   })
-  const WhatsLinkUs = "https://wa.link/8129uc";
+  const WhatsLinkUs = "https://wa.link/5u2vxx";
   return (
     
     <div>
