@@ -11,21 +11,21 @@ const InvestSection = () => {
           </h2>
           <p className="text-center text-xl">Our Trading Investment Plan</p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-center items-center">
-          <div data-aos="fade-up-right">
-            <p className="text-xl" >
+        <div data-aos="fade-up-right">
+            <p className="text-xl text-center w-full md:w-1/2 mx-auto py-8" >
               Spectrum Capitals offers a variety of trading accounts to match
               every trading style across all levels of experience. <br />
               Whether you’re a scalper or day trader, use EAs or are a
               discretionary trader - we have you covered.
             </p>
           </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-center items-center">
           <InvestCard name="BRONZE" minDeposit={500} maxDeposit={2499} roi={40} time={7} />
           <InvestCard name="SILVER" minDeposit={2500} maxDeposit={4999} roi={55} time={14}/>
           <InvestCard name="GOLD" minDeposit={5000} maxDeposit={9999} roi={70} time={14}/>
           <InvestCard name="DIAMOND" minDeposit={10000} maxDeposit={19999} roi={80} time={14}/>
-          <InvestCard name="PLATINUM" minDeposit={20000} maxDeposit={50000} roi={95} time={20}/>
+          <InvestCard name="PLATINUM" minDeposit={20000} maxDeposit={49999} roi={95} time={20}/>
+          <InvestCard name="ROSE" minDeposit={50000} maxDeposit={100000} roi={95} time={30}/>
         </div>
       </div>
       <div className="container">
