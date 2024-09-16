@@ -4,7 +4,7 @@ import { BiMoneyWithdraw } from "react-icons/bi";
 import { RiRefund2Fill } from "react-icons/ri";
 import { GiProfit } from "react-icons/gi";
 import { AiOutlineGift } from "react-icons/ai";
-import { BsPersonAdd } from "react-icons/bs";
+import { BsPersonAdd, BsShieldLockFill } from "react-icons/bs";
 import { FaWallet } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
@@ -97,6 +97,14 @@ let dataverify = data?.verified
         >
           <div className="d-flex justify-content-between align-items-center">
             <h5>Account Balance</h5> <FaWallet size={40} />
+          </div>
+          <h2>${data?.tAmount}.00</h2>
+        </div>
+        <div
+          className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
+        >
+          <div className="d-flex justify-content-between align-items-center">
+            <h5>Escrow</h5> <BsShieldLockFill size={40} />
           </div>
           <h2>${data?.tAmount}.00</h2>
         </div>

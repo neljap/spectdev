@@ -24,8 +24,8 @@ const InvestSection = () => {
           <InvestCard name="SILVER" minDeposit={2500} maxDeposit={4999} roi={55} time={14}/>
           <InvestCard name="GOLD" minDeposit={5000} maxDeposit={9999} roi={70} time={14}/>
           <InvestCard name="DIAMOND" minDeposit={10000} maxDeposit={19999} roi={80} time={14}/>
-          <InvestCard name="PLATINUM" minDeposit={20000} maxDeposit={49999} roi={95} time={20}/>
-          <InvestCard name="ROSE" minDeposit={50000} maxDeposit={100000} roi={95} time={30}/>
+          <InvestCard name="ROSE GOLD" minDeposit={20000} maxDeposit={49999} roi={95} time={20}/>
+          <InvestCard name="PLATIUM" minDeposit={50000} maxDeposit={100000} roi={95} time={30}/>
         </div>
       </div>
       <div className="container">

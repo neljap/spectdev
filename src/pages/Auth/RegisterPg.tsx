@@ -33,7 +33,7 @@ const RegisterPg = () => {
   }, [])
 
   useEffect(() => {
-    document.title = "Spectrum Capitals | Login"
+    document.title = "Spectrum Capitals | Register"
   }, [])
 
 
