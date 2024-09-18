@@ -84,15 +84,15 @@ const UserKycVData = () => {
       <div>
      <div className="container py-6">
       <div>
-        <h2 className="text-center py-4 text-3xl">TIER TWO VERIFICATION</h2>
+        <h2 className="text-center py-4 text-3xl font-[Jost] font-[700]">TIER TWO VERIFICATION</h2>
         <div className="flex flex-col gap-6">
           <div style={{ maxWidth: "500px", margin: "0px auto" }} >
-            <h3 className="text-center">Tier two Verification (KYC)</h3>
-            <p className="text-center">
+            <h3 className="text-center font-[700]">Tier two Verification (KYC)</h3>
+            <p className="text-center font-[500]">
               Please kindly upload a government approved identification
               document. (ID Card, Driver licenses and any other document.)
             </p>
-            <p className="text-center">
+            <p className="text-center font-[500]">
               Note: This can be rejected upon submission due to unclear format
               or wrong input
             </p>
@@ -109,7 +109,7 @@ const UserKycVData = () => {
                 {/* <p>{percent} % done</p> */}
                 {!kycFile && <>
                 <BsCloudUpload size={100} color="black" />
-                <p className="text-center text-black">
+                <p className="text-center text-black font-[500]">
                   Upload Your Document here
                 </p>
                 </>}
@@ -117,7 +117,7 @@ const UserKycVData = () => {
                 
               </div>
               <button
-                className="bg-primary px-4 py-2 rounded-xl"
+                className="bg-primary px-4 py-2 rounded-xl font-[500]"
                 onClick={uploadFile}
               >
                 {loading ? "Uploading..." : "Upload"}

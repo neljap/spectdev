@@ -122,13 +122,13 @@ const Sidebar = ({children}: any) => {
                       //  <NavLink to={item.path} key={index} className="flex flex-row gap-5 px-6 py-2 justify-start items-center">
                        <NavLink to={item.path} key={index} className={({isActive}) => (isActive ? activeLink : normalLink)}>
                            <div className="icon">{item.icon}</div>
-                           <div className="link_text">{item.name}</div>
+                           <p className="link_text font-[600] font-[Jost]">{item.name}</p>
                        </NavLink>
                    ))
                }
                <div className='flex gap-4 ps-5 cursor-pointer' onClick={() => setLogoutModal(true)}>   
                 <IoLogOutSharp size={32} />
-                <p>Logout</p>
+                <p className=' font-[600] font-[Jost]'>Logout</p>
                </div>
            </div>
           

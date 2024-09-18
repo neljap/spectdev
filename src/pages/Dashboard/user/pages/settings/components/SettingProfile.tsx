@@ -106,7 +106,7 @@ const SettingProfile = () => {
       <SpinnerLoad /> 
     ): (
       <Settingsmain>
-      <div className="h-fit w-[75%] mx-auto p-3 rounded-2xl my-1 bg-primary mt-8">
+      <div className="h-fit w-[75%] mx-auto p-3 rounded-2xl my-1  bg-primary mt-8">
         <div className="flex justify-between items-center py-2 flex-wrap">
           <div className="flex flex-row gap-4">
             <div>
@@ -117,19 +117,19 @@ const SettingProfile = () => {
                   <img
                     src={profilePics}
                     alt="image"
-                    className="w-32 h-32 rounded-full"
+                    className="w-24 h-24 rounded-full"
                    
                   />
                 </div>
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-[500] text-2xl">{fullname}</p>
-              <p>{email}</p>
+              <p className="font-[500] text-xl font-[Jost] capitalize">{fullname}</p>
+              <p className="font-[500]">{email}</p>
 
               <div>
               <button
-                className="bg-black py-2 px-4 rounded-xl text-white"
+                className="bg-black py-2 px-4 rounded-xl text-white font-[500]"
                 onClick={() => setProfilePicState(true)}
               >
                 Upload Photo
@@ -141,9 +141,10 @@ const SettingProfile = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white rounded p-4 w-full">
+        <h4 className="text-black mt-3 md:text-xl text-lg font-[700] font-[Jost]">Personal Information</h4>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 justify-between items-center px-3">
             <div className="flex flex-col">
-              <label className="text-black">Full Name</label>
+              <label className="text-black font-[500]">Full Name</label>
               <input
                 type="text"
                 placeholder="Full Name"
@@ -155,7 +156,7 @@ const SettingProfile = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-black">Email Address</label>
+              <label className="text-black font-[500]">Email Address</label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -167,9 +168,9 @@ const SettingProfile = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 justify-between items-center px-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 justify-between items-center px-3 py-2">
             <div className="flex flex-col">
-              <label className="text-black">Phone Number</label>
+              <label className="text-black font-[500]">Phone Number</label>
               <input
                 type="text"
                 placeholder="Phone Number"
@@ -181,7 +182,7 @@ const SettingProfile = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-black">Date Of Birth</label>
+              <label className="text-black font-[500]">Date Of Birth</label>
               <input
                 type="text"
                 placeholder="Date of Birth"
@@ -193,10 +194,10 @@ const SettingProfile = () => {
               />
             </div>
           </div>
-          <h4 className="text-black mt-3 font-bold">Address</h4>
+          <h4 className="text-black mt-3 md:text-xl text-lg font-[700] font-[Jost]">Address</h4>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 justify-between items-center px-3">
             <div className="flex flex-col">
-              <label className="text-black">Country</label>
+              <label className="text-black font-[500]">Country</label>
               <input
                 type="text"
                 placeholder="Country"
@@ -208,7 +209,7 @@ const SettingProfile = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-black">City</label>
+              <label className="text-black font-[500]">City</label>
               <input
                 type="text"
                 placeholder="City"
@@ -222,7 +223,7 @@ const SettingProfile = () => {
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 justify-between items-center px-3">
             <div className="flex flex-col">
-              <label className="text-black">Post Code</label>
+              <label className="text-black font-[500]">Post Code</label>
               <input
                 type="text"
                 placeholder="Postal Code"
@@ -234,7 +235,7 @@ const SettingProfile = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-black">State</label>
+              <label className="text-black font-[500]">State</label>
               <input
                 type="text"
                 placeholder="State"
@@ -248,7 +249,7 @@ const SettingProfile = () => {
           </div>
 
           <div className="pt-6 pb-3">
-            <button className="py-2 px-4 bg-primary rounded-xl" type="submit">
+            <button className="py-2 px-4 bg-primary rounded-xl font-[500]" type="submit">
               {loading ? <>Updating...</> : <>Update</>}
             </button>
           </div>

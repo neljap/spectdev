@@ -15,7 +15,7 @@ const AsMangeSection = () => {
       <hr />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14">
         <div>
-          <p data-aos="zoom-in">
+          <p>
             Our advisors connect your finances to what you want out of life and
             create a plan designed to make it happen, revealing possibilities
             while protecting you from the unexpected—today and every day after.
@@ -81,6 +81,7 @@ const AsMangeSection = () => {
             <div className="flex justify-start items-start flex-col gap-4">
               <h2 className="text-lg md:text-3xl  font-[Jost] pb-2 ">FINANCIAL PLANNING</h2>
              <p>These days, it's more important than ever to have a plan. Our version of financial planning not only gives you the confidence to know you're ready for anything, but is also designed to help you reach all your goals in the days ahead.</p>
+             
             <Button btntext="Learn More"/> 
             </div>
         </div>

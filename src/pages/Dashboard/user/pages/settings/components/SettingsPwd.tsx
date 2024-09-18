@@ -32,7 +32,7 @@ const SettingsPwd = () => {
         <div className='container py-8'>
           <form action="" onSubmit={handlePwdSubmit} className='md:w-1/2 w-full mx-auto'>
           <div className="flex flex-col py-4 relative">
-              <label>Old Password</label>
+              <label className="font-[500]">Old Password</label>
               <input
                 type={oldVisible ? "text" : "password"}
                 className="p-2 w-full rounded-lg border border-primary"
@@ -56,7 +56,7 @@ const SettingsPwd = () => {
               </div>
             </div>
           <div className="flex flex-col py-4 relative">
-              <label>New Password</label>
+              <label className="font-[500]">New Password</label>
               <input
                 type={newVisible ? "text" : "password"}
                 className="p-2 w-full rounded-lg border border-primary"
@@ -80,7 +80,7 @@ const SettingsPwd = () => {
               </div>
             </div>
             <div className="flex flex-col py-4 relative">
-              <label>Password</label>
+              <label className=" font-[500]">Password</label>
               <input
                 type={visibleConfirm ? "text" : "password"}
                 className="p-2 w-full rounded-lg border border-primary"

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 import BtcIcon from "../../../../assets/bitcoin.png";
-import LiteCoin from "../../../../assets/litecoin.png";
 import EthIcon from "../../../../assets/ethereum.png";
 import SpinnerLoad from "../../../components/SpinnerLoad";
 import FooterCR from "./FooterCR";
+import { usdtpng } from "../../../../assets";
 
 const UserWallet = () => {
   const {data} = useContext(AuthContext)
@@ -33,21 +33,21 @@ const UserWallet = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-8 w-full justify-between align-middle">
         <div className="">
           <div className="py-4">
-            <p className="text-2xl font-semibold">{data?.fullname}</p>
-            <p className="text-sm">{data?.email}</p>
+            <p className="text-2xl font-[700] capitalize">{data?.fullname}</p>
+            <p className="text-md font-[500]">{data?.email}</p>
             
           </div>
           <div className="flex gap-2 justify-between items-center px-3">
             <div className="flex flex-col justify-center items-center gap-2">
               <RiRefund2Fill size={40} />
-              <p>Fund Wallet</p>
+              <p className="font-[600] font-[Jost]">Fund Wallet</p>
               <Link to="/user/deposit">
                 <button className="bg-primary px-4 py-2 rounded-xl">Proceed</button>
               </Link>
             </div>
             <div className="flex flex-col justify-center items-center gap-2">
               <BiMoneyWithdraw size={40} />
-              <p>Withdraw</p>
+              <p className="font-[600] font-[Jost]">Withdraw</p>
               <Link to="/user/withdraw">
                 <button className="bg-primary px-4 py-2 rounded-xl">Proceed</button>
               </Link>
@@ -62,8 +62,8 @@ const UserWallet = () => {
                 style={{ width: "50px", height: "50px" }}
               />
               <div>
-                <h6>Bitcoin Wallet</h6>
-                <h4>${data?.tBtc}.00</h4>
+                <h6 className="font-[700] font-[Jost]">Bitcoin Wallet</h6>
+                <h4 className="font-[500]">${data?.tBtc}.00</h4>
               </div>
             </div>
             <div className="flex justify-between items-center gap-2 border border-primary  p-2 rounded" style={{width: '200px', height: '120px'}}>
@@ -73,19 +73,19 @@ const UserWallet = () => {
                 style={{ width: "50px", height: "50px" }}
               />
               <div>
-                <h6>Ethereum Wallet</h6>
-                <h4>${data?.tEth}.00</h4>
+                <h6 className="font-[700] font-[Jost]">Ethereum Wallet</h6>
+                <h4 className="font-[500]">${data?.tEth}.00</h4>
               </div>
             </div>
             <div className="flex justify-center  items-center gap-2 border border-primary p-2 rounded" style={{width: '200px', height: '120px'}}>
               <img
-                src={LiteCoin}
+                src={usdtpng}
                 alt=""
                 style={{ width: "50px", height: "50px" }}
               />
               <div>
-                <h6>Litecoin Wallet</h6>
-                <h4>${data?.tLtc}.00</h4>
+                <h6 className="font-[700] font-[Jost]">USDT Wallet</h6>
+                <h4 className="font-[500]">${data?.tUsdt}.00</h4>
               </div>
             </div>
           </div>

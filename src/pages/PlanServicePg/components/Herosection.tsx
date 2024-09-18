@@ -50,7 +50,7 @@ const Herosection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-center items-center py-12 overflow-hidden">
           <div className="flex flex-col gap-6" data-aos="fade-up-left">
             <h3 className="text-xl md:text-3xl font-[Jost] pb-2 font-[600]" data-aos="fade-up">Outstanding team</h3>
-            <p data-aos="fade-up">PortPolio Finance is a tightly knit group working together with management teams toward common goals. We have more than 70 investment professionals, including 24 partners with an average tenure at Passfolio Finance of more than a decade. This allows us to devote substantial time to the companies in which we invest.</p>
+            <p data-aos="fade-up">Portfolio Finance is a tightly knit group working together with management teams toward common goals. We have more than 70 investment professionals, including 24 partners with an average tenure at Passfolio Finance of more than a decade. This allows us to devote substantial time to the companies in which we invest.</p>
           </div>
           <div data-aos="fade-up-right">
             <img src={stockhero} alt="image" className="w-full rounded-lg" />

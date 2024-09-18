@@ -9,5 +9,6 @@
     box-sizing: border-box;
     font-family: Poppins;
     scroll-behavior: smooth;
+    font-weight: 400;
     /* overflow-x: hidden; */
 }

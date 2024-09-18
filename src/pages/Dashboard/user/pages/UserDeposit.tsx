@@ -8,7 +8,7 @@ import FooterCR from "./FooterCR";
 const UserDeposit = () => {
     const navigate = useNavigate();
 
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState<any>(null);
   const [select, setSelect] = useState("");
   const [sumLoading, setSumLoading] = useState(false)
   // const [display, setDisplay] = useState(false);
@@ -32,7 +32,7 @@ const UserDeposit = () => {
   const handleSubmit = (e : any) => {
     e.preventDefault();
     setSumLoading(true)
-    if (amount < 500) {
+    if (amount == null || amount < 500) {
       toast.error("Amount is too low", {
         position: "bottom-left",
       });
@@ -74,22 +74,22 @@ const UserDeposit = () => {
     {loading ? (
       <SpinnerLoad /> 
     ): (
-      <div>
-      <div className="container py-12">
-        <div>
-          <h2 className="text-center text-3xl font-[600] p-6">Deposit</h2>
+      <div className="">
+      <div className="container py-12 min-h-screen">
+        <div className="w-full md:w-3/4 mx-auto">
+          <h2 className="text-center text-3xl font-[700] p-6 font-[Jost]">Deposit</h2>
             <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 border border-primary rounded p-4 bg-[#f1f1f1] dark:bg-[#1f2937]"
         >
           <div>
-            <label>Enter Amount</label> <br />
+            <label className="font-[Jost] font-[600] text-xl">Enter Amount</label> <br />
             <input
               type="number"
               value={amount}
               onChange={(e: any) => setAmount(e.target.value)}
               name="amount"
-              className="w-full p-2 rounded"
+              className="w-full p-2 rounded font-[500]"
             />
           </div>
           <select
@@ -110,7 +110,8 @@ const UserDeposit = () => {
         </form>
         </div>
     </div>  
-    <div className="m-50">
+    {/* <div className="m-50"> */}
+    <div className="">
       <FooterCR />
     </div>
     

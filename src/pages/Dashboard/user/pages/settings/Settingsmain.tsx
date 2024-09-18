@@ -20,14 +20,14 @@ const Settingsmain = ({children}: any) => {
     }
   ]
 
-  const activeLink = "border border-b-primary pb-2"
-  const normalLink = ""
+  const activeLink = "border border-b-primary pb-2 font-[500]"
+  const normalLink = "font-[500]"
 
   return (
     <div>
         <div>
           <div className="flex flex-col gap-4 justify-center items-center pt-4">
-            <h2 className="md:text-4xl text-2xl font-[600] text-center">Settings</h2>
+            <h2 className="md:text-3xl text-xl font-[Jost] font-[600] text-center">Settings</h2>
             <p className="text-md font-[500] text-center">Manage your account settings and Preferences</p>
           </div>
             <div className="py-4 shadow-lg flex flex-col justify-center item-center">

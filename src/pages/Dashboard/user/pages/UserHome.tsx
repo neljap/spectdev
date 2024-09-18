@@ -32,15 +32,15 @@ let dataverify = data?.verified
   const verifiedeta = () => {
     if(dataverify === true){
     return (
-      <div className="d-flex gap-2">
-        <p>Verified</p>
+      <div className="flex flex-row gap-2">
+        <p className="font-[600] font-[Jost]">Verified</p>
         <IoMdCheckmarkCircleOutline size={25} color="yellow"/>
         </div>
     )
   }else{
     return (
-      <div className="d-flex gap-2">
-        <p>Unverified</p>
+      <div className="flex flex-row gap-2">
+        <p className="font-[600] font-[Jost] text-xl">Unverified</p>
         <FaUserXmark size={25} color="red" />
       </div>
     );
@@ -54,36 +54,36 @@ let dataverify = data?.verified
     ): (
       <div>
     <div className='pt-6'>
-      <div  className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 w-full justify-between align-middle">
+      <div  className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 w-full justify-between align-middle md:ps-4 ps-0">
         <div>
-         <p className="text-start text-2xl">Welcome, {data?.fullname}</p>
+         <p className="text-start text-2xl font-[700] font-[Jost] capitalize">Welcome, {data?.fullname}</p>
       <div className="flex gap-3 justify-start items-center">
           
           {data?.profilePics === "" ? (
-          <div className="mb-3 bg-white p-3" style={{borderRadius: "50%"}}>
+          <div className="mb-3 bg-white p-3 rounded-full">
            <FaUserAlt size={40} color="black"/> 
           </div>
           ): ( 
-          <div className="mb-3 bg-white p-2" style={{borderRadius: "50%"}}>
-           <img src={data?.profilePics} alt="image" style={{width: "60px", height: "60px", borderRadius: "50%"}}/>
+          <div className="mb-3 bg-white p-2 rounded-full">
+           <img src={data?.profilePics} alt="image" className="rounded-full w-24 h-24"/>
           </div>
           )}
           <div>
-            <p>Account Plan: {data?.accountype}</p>
+            <p className="font-[600]"><span className="font-[800] font-[Jost]">Account Plan:</span> {data?.accountype}</p>
             {verifiedeta()}
           </div>
         </div> 
         <div className="flex gap-2 justify-between items-center px-3">
             <div className="flex flex-col justify-center items-center">
               <RiRefund2Fill size={30} />
-              <p>Fund Wallet</p>
+              <p className="font-[600] font-[Jost]">Fund Wallet</p>
               <Link to="/user/deposit">
                 <button className="bg-primary px-4 py-2 rounded-xl">Proceed</button>
               </Link>
             </div>
             <div className="flex flex-col justify-center items-center">
               <BiMoneyWithdraw size={30} />
-              <p>Withdraw</p>
+              <p className="font-[600] font-[Jost]">Withdraw</p>
               <Link to="/user/withdraw">
                 <button className="bg-primary px-4 py-2 rounded-xl">Proceed</button>
               </Link>
@@ -96,7 +96,7 @@ let dataverify = data?.verified
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="d-flex justify-content-between align-items-center">
-            <h5>Account Balance</h5> <FaWallet size={40} />
+            <h5 className="font-[600] font-[Jost]">Account Balance</h5> <FaWallet size={40} />
           </div>
           <h2>${data?.tAmount}.00</h2>
         </div>
@@ -104,15 +104,15 @@ let dataverify = data?.verified
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="d-flex justify-content-between align-items-center">
-            <h5>Escrow</h5> <BsShieldLockFill size={40} />
+            <h5 className="font-[600] font-[Jost]">Escrow</h5> <BsShieldLockFill size={40} />
           </div>
-          <h2>${data?.tAmount}.00</h2>
+          <h2>${data?.tEscrow}.00</h2>
         </div>
         <div
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="flex justify-between items-center">
-            <h5>Total Profit</h5> <GiProfit size={40} />
+            <h5 className="font-[600] font-[Jost]">Total Profit</h5> <GiProfit size={40} />
           </div>
           <h2>${data?.tProfit}.00</h2>
         </div>
@@ -120,23 +120,23 @@ let dataverify = data?.verified
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="flex justify-between items-center">
-            <h5>Total Bonus</h5> <AiOutlineGift size={40} />
+            <h5 className="font-[600] font-[Jost]">Total Bonus</h5> <AiOutlineGift size={40} />
           </div>
-          <h2>${data?.tBonus}.00</h2>
+          <h2 className="font-[500]">${data?.tBonus}.00</h2>
         </div>
-        <div
+        {/* <div
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937]"
         >
           <div className="flex justify-between items-center">
             <h5>TOTAL WITHDRAWAL</h5> <BiMoneyWithdraw size={40} />
           </div>
           <h2>${data?.twithd}.00</h2>
-        </div>
+        </div> */}
         <div
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="flex justify-between items-center">
-            <h5>REFERRALS</h5> <BsPersonAdd size={40} />
+            <h5 className="font-[600] font-[Jost]">REFERRALS</h5> <BsPersonAdd size={40} />
           </div>
           <h2 className="text-center">{data?.tRefer}</h2>
         </div>
@@ -144,7 +144,7 @@ let dataverify = data?.verified
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
         >
           <div className="flex justify-between items-center ">
-            <h5>TOTAL DEPOSIT</h5> <RiRefund2Fill size={40} />
+            <h5 className="font-[600] font-[Jost]">TOTAL DEPOSIT</h5> <RiRefund2Fill size={40} />
           </div>
           <h2>${data?.tDeposit}.00</h2>
         </div>
@@ -152,7 +152,7 @@ let dataverify = data?.verified
         </div>
       </div>
       <div>
-        <h1 className="text-3xl">Personal Trading Chart</h1>
+        <h1 className="text-3xl font-[700] font-[Jost] md:ps-4 ps-0">Personal Trading Chart</h1>
         <div className="w-full mt-5 bg-[#f1f1f1] dark:bg-[#1f2937] h-[600px]">
           <iframe
             src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_cd3c4&symbol=BINANCE%3ABTCUSD&interval=1&hidesidetoolbar=0&symboledit=1&saveimage=1&studies=%5B%5D&theme=dark&style=9&timezone=Etc%2FUTC&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en&utm_source=www.account.deepmargins.com&utm_medium=widget&utm_campaign=chart&utm_term=BINANCE%3ABTCUSD#%7B%22page-uri%22%3A%22www.account.deepmargins.com%2Foverview%22%7D"

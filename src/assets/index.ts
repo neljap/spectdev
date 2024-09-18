@@ -17,6 +17,7 @@ export {default as splanthree} from "./splans.jpg";
 export {default as btcpng} from "./bitcoin.png";
 export {default as ethpng} from "./ethereum.png";
 export {default as ltcpng} from "./litecoin.png";
+export {default as usdtpng} from "./usdt_img.png";
 export {default as dlrpng} from "./dollar.png";
 export {default as contactImg} from "./contactimg.jpg";
 export {default as stockhero} from "./stockhero.jpg";
