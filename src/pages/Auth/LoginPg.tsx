@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import Asimg from "../../assets/Sign in-bro.svg";
 import SpinnerLoad from "../components/SpinnerLoad";
-import { hosturl } from "../../utils/ApiFeatures";
+// import { hosturl } from "../../utils/ApiFeatures";
 import ReCAPTCHA from "react-google-recaptcha";
 // import {ThreeDots} from "react-loader-spinner"
 
@@ -56,7 +56,7 @@ const LoginPg = () => {
     const formData = { email, password };
 
     await axios
-      .post(`${hosturl}/api/user/login`, formData)
+      .post("https://specserver.vercel.app/api/user/login", formData)
       .then((res) => {
         Cookies.set("token", res.data.token, { expires: 7 });
         navigate("/user/home");
