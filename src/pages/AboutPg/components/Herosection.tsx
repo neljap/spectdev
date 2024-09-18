@@ -51,9 +51,8 @@ const Herosection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 justify-center items-center">
           <div>
             <h2 className='text-lg md:text-3xl font-[Jost] pb-2'>OUR PRINCIPLES AND AMBITIONS</h2>
-            <p>
-              WE APPROACH SUSTAINABILITY FROM THREE PERSPECTIVES: AN ASSET
-              OWNER, AN ASSET MANAGER, AND AS A COMPANY IN OUR OWN RIGHT
+            <p className="capitalize">
+              We approach sustainability from three perspectives: An Assets Owner, An Assets Manager, and as a company in our own right
             </p>
             <p>
               While our responsibilities and obligations in each of these three

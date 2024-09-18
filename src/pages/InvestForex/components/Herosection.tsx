@@ -61,7 +61,7 @@ const Herosection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-14 justify-center items-center overflow-hidden">
             
             <div data-aos="fade-up-right">
-              <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Foreign Exchange</h3>
+              {/* <h3 className="text-lg md:text-3xl font-[Jost] font-[500] pb-2">Foreign Exchange</h3> */}
               <p className="text-md">
                 Spectrum Capitals finance offers a broad array of professional services and access to the global foreign exchange markets for commercial and institutional clients. execution and clearing services in virtually all tradable currency pairs and derivative instruments.
               </p>
