@@ -138,7 +138,7 @@ let dataverify = data?.verified
           <div className="flex justify-between items-center">
             <h5 className="font-[600] font-[Jost]">REFERRALS</h5> <BsPersonAdd size={40} />
           </div>
-          <h2 className="text-center">{data?.tRefer}</h2>
+          <h2 className="text-center font-[500]">{data?.tRefer}</h2>
         </div>
         <div
           className="p-3 border border-primary rounded bg-[#f1f1f1] dark:bg-[#1f2937] w-48"
@@ -146,7 +146,7 @@ let dataverify = data?.verified
           <div className="flex justify-between items-center ">
             <h5 className="font-[600] font-[Jost]">TOTAL DEPOSIT</h5> <RiRefund2Fill size={40} />
           </div>
-          <h2>${data?.tDeposit}.00</h2>
+          <h2 className="font-[500]">${data?.tDeposit}.00</h2>
         </div>
       </div>
         </div>
