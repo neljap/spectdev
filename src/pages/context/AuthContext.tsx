@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { hosturl } from "../../utils/ApiFeatures";
+// import { hosturl } from "../../utils/ApiFeatures";
 import { toast } from "react-toastify";
 
 export const AuthContext = createContext<any>(null);
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }: any) => {
     };
     const getUserDetails = async () => {
       await axios
-        .get(`${hosturl}/api/user/getuser`, config)
+        .get("https://specserver.vercel.app/api/user/getuser", config)
         .then((res) => {
           setData(res?.data);
         })
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }: any) => {
     getUserDetails();
   }, []);
 
-  console.log("from context", data)
+  // console.log("from context", data)
 
   return (
     <AuthContext.Provider value={{ data, setData }}>
