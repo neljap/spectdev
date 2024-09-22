@@ -19,6 +19,20 @@ const Sidebar = ({children}: any) => {
 
     const [logoutModal, setLogoutModal] = useState(false);
     const [open, setOpen] = useState(false);
+    // const [navLogModal, setNavLogModal] = useState(false);
+
+    // if(navLogModal){
+    //   setOpen(true)
+    //   setLogoutModal(true)
+    // }else{
+    //  return;
+    // }
+
+    const navLogModal = () => {
+      setOpen(true);
+      setLogoutModal(true);
+      
+    }
 
     const navigate = useNavigate();
 
@@ -94,20 +108,24 @@ const Sidebar = ({children}: any) => {
             {open ? <FaTimes /> : <FaBars />}
           </div>
         </div>
-        <ul
+        <div
           className={`
         md:hidden bg-[#f1f1f1] dark:bg-[#1f2937] fixed z-10 w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
         duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
+        onClick={() => setOpen(false)}
         >
             {menuItem.map((item, index) => (
-               <li key={index} onClick={() => setOpen(false)}>
-            <Link to={item.path} className="py-1 px-3 inline-block">
+               <p key={index} onClick={() => setOpen(false)}>
+            <Link to={item.path} className="py-1 px-3 inline-block font-[Jost] font-[600]">
               {item.name}
             </Link>
-          </li> 
+          </p> 
             ))}
-        </ul>
+            <div className='ps-3 cursor-pointer' onClick={navLogModal}>   
+                <p className=' font-[600] font-[Jost]'>Logout</p>
+               </div>
+        </div>
         </div>
         <div className='flex flex-row '>
             
