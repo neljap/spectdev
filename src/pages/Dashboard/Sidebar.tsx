@@ -19,14 +19,6 @@ const Sidebar = ({children}: any) => {
 
     const [logoutModal, setLogoutModal] = useState(false);
     const [open, setOpen] = useState(false);
-    // const [navLogModal, setNavLogModal] = useState(false);
-
-    // if(navLogModal){
-    //   setOpen(true)
-    //   setLogoutModal(true)
-    // }else{
-    //  return;
-    // }
 
     const navLogModal = () => {
       setOpen(true);
