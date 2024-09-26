@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Asimg from "../../assets/Sign up-bro.svg";
 import SpinnerLoad from "../components/SpinnerLoad";
-import { hosturl } from "../../utils/ApiFeatures";
+// import { hosturl } from "../../utils/ApiFeatures";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const RegisterPg = () => {
@@ -58,7 +58,7 @@ const RegisterPg = () => {
           number,
         };
         await axios.post(
-          `${hosturl}/api/user/register`,
+          "https://specserver.vercel.app/api/user/register",
           regdata
         );
 
