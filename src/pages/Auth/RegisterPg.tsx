@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import Asimg from "../../assets/Sign up-bro.svg";
 import SpinnerLoad from "../components/SpinnerLoad";
 // import { hosturl } from "../../utils/ApiFeatures";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 const RegisterPg = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const RegisterPg = () => {
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(false);
   const [showPass, setShowPass] = useState(false);
-  const [recapState, setRecapState] = useState(null);
+  // const [recapState, setRecapState] = useState(null);
   //   const [checked, setChecked] = useState(false)
   //   const [isRecapVerify, setIsRecapVerify] = useState(false)
 
@@ -47,10 +47,12 @@ const RegisterPg = () => {
           position: "bottom-left",
         });
         setLoading(false);
-      } else if(recapState == null){
-      toast.info("Confirm that you're not a robot", {position: "bottom-left"})
-      return;
-    } else {
+      }
+    //    else if(recapState == null){
+    //   toast.info("Confirm that you're not a robot", {position: "bottom-left"})
+    //   return;
+    // } 
+    else {
         const regdata = {
           email,
           password,
@@ -191,7 +193,7 @@ const RegisterPg = () => {
               </div>
             </div>
             <div>
-              <ReCAPTCHA sitekey="6LdND14pAAAAALsYMjhH7xcwm-xPrCw5RVpTDnKs" onChange={(val : any) => setRecapState(val)} />
+              {/* <ReCAPTCHA sitekey="6LdND14pAAAAALsYMjhH7xcwm-xPrCw5RVpTDnKs" onChange={(val : any) => setRecapState(val)} /> */}
             </div>
             <div className="flex flex-row justify-between align-middle items-center py-2 gap-2">
               <button className="bg-primary rounded-xl py-2 px-4 text-lg">
