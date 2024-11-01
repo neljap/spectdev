@@ -36,6 +36,7 @@ const RegisterPg = () => {
     document.title = "Spectrum Capitals | Register"
   }, [])
 
+  // 6LfSrWIqAAAAAIMSOloTNvjoR0GdSh9ZMtBmdY7-
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

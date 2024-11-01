@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { BsCloudUpload } from "react-icons/bs";
 import axios from "axios";
 import {ThreeDots} from "react-loader-spinner";
-import { hosturl } from "../../../../utils/ApiFeatures";
+// import { hosturl } from "../../../../utils/ApiFeatures";
 import { AuthContext } from "../../../context/AuthContext";
 import SpinnerLoad from "../../../components/SpinnerLoad";
 import FooterCR from "./FooterCR";
@@ -58,7 +58,7 @@ const UserKycVData = () => {
     try {
       setLoading(true)
       const kycinfo = await preFile('image');
-      await axios.patch(`${hosturl}/api/user/update/${data?._id}`, {
+      await axios.patch(`https://specserver.vercel.app/api/user/update/${data?._id}`, {
         kycinfo,
       });
 
