@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
-import { hosturl } from "../../../../utils/ApiFeatures";
+// import { hosturl } from "../../../../utils/ApiFeatures";
 import FooterCR from "./FooterCR";
 
 
@@ -65,7 +65,7 @@ const UserPayProof = () => {
         toast.info("Payment Receipt not uploaded, Kindly Upload", {position: "bottom-left"})
         return
       }else{
-     await axios.post(`${hosturl}/api/user/receipts`, {
+     await axios.post("https://specserver.vercel.app/api/user/receipts", {
         userid: data?._id,
         receipt: kycinfo,
       });

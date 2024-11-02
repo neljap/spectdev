@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import SpinnerLoad from "../../../components/SpinnerLoad";
 import FooterCR from "./FooterCR";
-import { hosturl } from "../../../../utils/ApiFeatures";
+// import { hosturl } from "../../../../utils/ApiFeatures";
 // import { BsCloudUpload } from "react-icons/bs";
 
 const UserSettings = () => {
@@ -50,7 +50,7 @@ const UserSettings = () => {
     try {
       setLoading(true)
     const updatedata = {fullname, dob, number, country, city, postcode, state}
-     await axios.patch(`${hosturl}/api/user/update/${data?._id}`, updatedata);
+     await axios.patch(`https://specserver.vercel.app/api/user/update/${data?._id}`, updatedata);
        toast.success("Updated Successfully", {position: "bottom-left"}) 
     } catch (err : any) {
       toast.error(err.code, {position: "bottom-left"})
